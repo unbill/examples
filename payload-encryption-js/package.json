@@ -4,7 +4,7 @@
   "description": "Example of setting up payload encryption",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "runExample": "node example.js"
   },
   "author": "Q2 Biller Direct Team",
   "license": "MIT",
