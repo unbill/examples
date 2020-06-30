@@ -19,12 +19,12 @@ exports.encrypt = async ({ publicKeyString, payload }) => {
     // Encrypt the payload with AES
     const aesEncryptionResult = encryptAES(stringPayload)
     // Concatenate the AES key and iv
-    const aesKeyPlusVi = `${aesEncryptionResult.key}|${aesEncryptionResult.iv}`
+    const aesKeyPlusIv = `${aesEncryptionResult.key}|${aesEncryptionResult.iv}`
 
     // Now Encrypt the AES key and iv with RSA
     const publicKey = new NodeRsa()
     publicKey.importKey(publicKeyString, 'pkcs8-public')
-    const encryptedAesInfo = publicKey.encrypt(aesKeyPlusVi, 'base64')
+    const encryptedAesInfo = publicKey.encrypt(aesKeyPlusIv, 'base64')
 
     // Prepend the encrypted AES info to the resultant message
     return `${encryptedAesInfo}|${aesEncryptionResult.encryptedText}`
