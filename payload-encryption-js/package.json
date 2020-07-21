@@ -9,7 +9,7 @@
   "author": "Q2 Biller Direct Team",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "node-rsa": "^1.0.8"
   },
   "devDependencies": {
